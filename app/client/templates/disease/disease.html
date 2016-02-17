@@ -2,14 +2,14 @@
   <div class="disease">
     {{#with disease}}
     <h1>{{PreferredLabel}}</h1>
-    <h4>AKA: {{Synonyms}}</h4>
+    {{#if Synonyms}}<h4>AKA: {{Synonyms}}</h4>{{/if}}
     {{/with}}
 
     <p>
       {{{linkedDefinition}}}
     </p>
 
-    {{#if children}}
+    {{#if children.count}}
     <h3>Examples:</h3>
     <ul>
       {{#each children}}

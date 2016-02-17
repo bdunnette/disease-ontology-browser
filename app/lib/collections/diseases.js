@@ -2,7 +2,7 @@ Diseases = new Mongo.Collection('diseases');
 
 DiseasesIndex = new EasySearch.Index({
   collection: Diseases,
-  fields: ['PreferredLabel'],
+  fields: ['PreferredLabel', 'Synonyms'],
   engine: new EasySearch.MongoDB()
 });
 
