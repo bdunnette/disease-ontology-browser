@@ -3,10 +3,21 @@
     {{#with disease}}
     <h1>{{PreferredLabel}}</h1>
     <h4>AKA: {{Synonyms}}</h4>
-
     {{/with}}
+
     <p>
       {{{linkedDefinition}}}
     </p>
+
+    {{#if children}}
+    <h3>Examples:</h3>
+    <ul>
+      {{#each children}}
+      <li>
+        <a href="{{pathFor route='disease' doid=this.id}}">{{PreferredLabel}}</a>
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
   </div>
 </template>

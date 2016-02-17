@@ -28,13 +28,20 @@ DiseaseController = RouteController.extend({
     });
     var parent = null;
     if (disease && disease.Parents) {
-      var parent = Diseases.findOne({
+      parent = Diseases.findOne({
         _id: disease.Parents
+      });
+    };
+    var children = null;
+    if (disease) {
+      children = Diseases.find({
+        Parents: disease._id
       });
     }
     return {
       disease: disease,
-      parent: parent
+      parent: parent,
+      children: children
     }
   },
 
