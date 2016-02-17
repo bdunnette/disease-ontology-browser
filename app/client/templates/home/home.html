@@ -1,0 +1,17 @@
+<template name="Home">
+  <div class="home">
+    {{> EasySearch.Input index=diseasesIndex}}
+
+    <ul>
+      {{#EasySearch.Each index=diseasesIndex}}
+        <li><a href="/disease/{{id}}">{{PreferredLabel}}</a></li>
+      {{/EasySearch.Each}}
+    </ul>
+
+    {{> EasySearch.LoadMore index=diseasesIndex}}
+
+    {{#EasySearch.IfNoResults index=diseasesIndex}}
+      <div class="no-results">No results found!</div>
+    {{/EasySearch.IfNoResults}}
+  </div>
+</template>

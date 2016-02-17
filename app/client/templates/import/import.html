@@ -1,0 +1,23 @@
+<template name="Import">
+  <div class="import">
+    <form class="form-horizontal upload-form">
+      
+      <div class="form-group">
+        <label for="importFile">CSV File</label>
+        <input id="importFile" type="file">
+      </div>
+
+      <div class="form-group">
+        <label for="subfieldDelimiter">Sub-field delimiter (for fields that contain multiple values)</label>
+        <select id="subfieldDelimiter">
+          {{#each delimiters}}
+            <option>{{this}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <button class="btn btn-default" type="submit">Import</button>
+    </form>
+
+  </div>
+</template>

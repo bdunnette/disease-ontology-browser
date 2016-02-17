@@ -1,0 +1,12 @@
+<template name="Disease">
+  <div class="disease">
+    {{#with disease}}
+    <h1>{{PreferredLabel}}</h1>
+    <h4>AKA: {{Synonyms}}</h4>
+
+    {{/with}}
+    <p>
+      {{{linkedDefinition}}}
+    </p>
+  </div>
+</template>
