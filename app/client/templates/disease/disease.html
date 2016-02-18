@@ -1,5 +1,16 @@
 <template name="Disease">
   <div class="disease">
+    <ol class="breadcrumb">
+      <li>
+        <a href="{{pathFor route='home'}}">Home</a>
+      </li>
+      {{#if parent}}
+        <li>
+          <a href="{{pathFor route='disease' doid=parent.id}}">{{parent.PreferredLabel}}</a>
+        </li>
+      {{/if}}
+      <li class="active">{{disease.PreferredLabel}}</li>
+    </ol>
     {{#with disease}}
       <h1>{{PreferredLabel}}</h1>
       {{#if Synonyms.count}}
@@ -12,15 +23,40 @@
       {{{linkedDefinition}}}
     </p>
 
-    {{#if children.count}}
-      <h3>Examples:</h3>
-      <ul>
-        {{#each children}}
-          <li>
-            <a href="{{pathFor route='disease' doid=this.id}}">{{PreferredLabel}}</a>
-          </li>
-        {{/each}}
-      </ul>
-    {{/if}}
+    <div class="row">
+      <div class="col-md-6">
+        {{> DiseaseChildren}}
+      </div>
+      <div class="col-md-6">
+        {{> DiseaseReferences}}
+      </div>
+    </div>
+
   </div>
+</template>
+
+<template name="DiseaseChildren">
+  {{#if children.count}}
+    <h3>Examples:</h3>
+    <ul>
+      {{#each children}}
+        <li>
+          <a href="{{pathFor route='disease' doid=this.id}}">{{PreferredLabel}}</a>
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</template>
+
+<template name="DiseaseReferences">
+  {{#if disease.database_cross_reference}}
+    <h3>In Other Databases:</h3>
+    <ul>
+      {{#each disease.database_cross_reference}}
+        <li>
+          {{{linkedReference}}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
 </template>

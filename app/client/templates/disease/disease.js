@@ -16,11 +16,35 @@ Template.Disease.helpers({
       } else {
         definition = this.disease.Definitions;
       }
-      var linkedDefinition = definition.replace(this.parent.PreferredLabel, "<a href=/disease/" + this.parent.id + ">" + this.parent.PreferredLabel + "</a>")
+      var linkedDefinition = definition.replace(this.parent.PreferredLabel, "<a href=/disease/" + this.parent.id + ">" + this.parent.PreferredLabel + "</a>").replace("_", " ");
       return linkedDefinition;
     } else {
       return null;
     }
+  }
+});
+
+Template.DiseaseReferences.helpers({
+  linkedReference: function() {
+    var refSplit = this.valueOf().split(":");
+    var refType = refSplit[0];
+    var refCode = refSplit[1];
+    var linkedReference = this.valueOf();
+    var link = null;
+    switch (refType) {
+      case "NCI":
+        link = "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=16.01d&ns=NCI_Thesaurus&code=" + refCode
+        break;
+      case "MSH":
+        link = "http://www.ncbi.nlm.nih.gov/mesh/?term=" + refCode
+        break;
+      default:
+        link = null;
+    }
+    if (link) {
+      linkedReference = "<a target=_blank href=" + link + ">" + this.valueOf() + "</a>"
+    }
+    return linkedReference;
   }
 });
 
