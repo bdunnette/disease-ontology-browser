@@ -1,8 +1,11 @@
 <template name="Disease">
   <div class="disease">
     {{#with disease}}
-    <h1>{{PreferredLabel}}</h1>
-    {{#if Synonyms}}<h4>AKA: {{Synonyms}}</h4>{{/if}}
+      <h1>{{PreferredLabel}}</h1>
+      {{#if Synonyms.count}}
+        <h4>AKA:
+          {{Synonyms}}</h4>
+      {{/if}}
     {{/with}}
 
     <p>
@@ -10,14 +13,14 @@
     </p>
 
     {{#if children.count}}
-    <h3>Examples:</h3>
-    <ul>
-      {{#each children}}
-      <li>
-        <a href="{{pathFor route='disease' doid=this.id}}">{{PreferredLabel}}</a>
-      </li>
-      {{/each}}
-    </ul>
+      <h3>Examples:</h3>
+      <ul>
+        {{#each children}}
+          <li>
+            <a href="{{pathFor route='disease' doid=this.id}}">{{PreferredLabel}}</a>
+          </li>
+        {{/each}}
+      </ul>
     {{/if}}
   </div>
 </template>

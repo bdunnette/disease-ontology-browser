@@ -36,7 +36,11 @@ DiseaseController = RouteController.extend({
     if (disease) {
       children = Diseases.find({
         Parents: disease._id
-      }, {sort:{PreferredLabel:1}});
+      }, {
+        sort: {
+          PreferredLabel: 1
+        }
+      });
     }
     return {
       disease: disease,
