@@ -23,7 +23,7 @@ Template.Disease.helpers({
     }
   },
 
-  symptomsFromDefinition: function(){
+  symptomsFromDefinition: function() {
     console.log(this);
     var definition = null;
     if (Array.isArray(this.Definitions)) {
@@ -40,7 +40,7 @@ Template.Disease.helpers({
 });
 
 Template.DiseaseReferences.helpers({
-  sortedReferences: function(){
+  sortedReferences: function() {
     return this.disease.database_cross_reference.sort();
   },
 

@@ -1,10 +1,13 @@
 <template name="Home">
   <div class="home">
-    <strong>Disease Search:</strong> {{> EasySearch.Input index=diseasesIndex}}
+    <strong>Disease Search:</strong>
+    {{> EasySearch.Input index=diseasesIndex}}
 
     <ul>
       {{#EasySearch.Each index=diseasesIndex}}
-        <li><a href="/disease/{{id}}">{{PreferredLabel}}</a></li>
+        <li>
+          <a href="/disease/{{id}}">{{PreferredLabel}}</a>
+        </li>
       {{/EasySearch.Each}}
     </ul>
 
