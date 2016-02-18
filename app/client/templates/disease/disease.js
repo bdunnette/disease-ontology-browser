@@ -25,6 +25,10 @@ Template.Disease.helpers({
 });
 
 Template.DiseaseReferences.helpers({
+  sortedReferences: function(){
+    return this.disease.database_cross_reference.sort();
+  },
+
   linkedReference: function() {
     var refSplit = this.valueOf().split(":");
     var refType = refSplit[0];

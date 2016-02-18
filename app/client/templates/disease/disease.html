@@ -52,7 +52,7 @@
   {{#if disease.database_cross_reference}}
     <h3>In Other Databases:</h3>
     <ul>
-      {{#each disease.database_cross_reference}}
+      {{#each sortedReferences}}
         <li>
           {{{linkedReference}}}
         </li>
