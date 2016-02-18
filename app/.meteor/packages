@@ -22,6 +22,14 @@ iron:router
 easy:search
 dburles:collection-helpers
 aldeed:collection2
+#accounts-password
+#alanning:roles
 twbs:bootstrap
+#fortawesome:fontawesome
+#yogiben:admin
+#ian:accounts-ui-bootstrap-3
+#zimme:active-route
 harrison:papa-parse
-ground:db
+#nimble:restivus
+#service-configuration
+#ground:db
