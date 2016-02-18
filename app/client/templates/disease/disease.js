@@ -33,7 +33,7 @@ Template.DiseaseReferences.helpers({
     var link = null;
     switch (refType) {
       case "NCI":
-        link = "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=16.01d&ns=NCI_Thesaurus&code=" + refCode
+        link = "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=NCI_Thesaurus&code=" + refCode
         break;
       case "MSH":
         link = "http://www.ncbi.nlm.nih.gov/mesh/?term=" + refCode
