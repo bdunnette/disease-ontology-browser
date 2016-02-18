@@ -13,10 +13,11 @@
     </ol>
     {{#with disease}}
       <h1>{{PreferredLabel}}</h1>
-      {{#if Synonyms.count}}
+      {{#if Synonyms.length}}
         <h4>AKA:
           {{Synonyms}}</h4>
       {{/if}}
+      <!-- Symptoms: {{symptomsFromDefinition}} -->
     {{/with}}
 
     <p>
@@ -49,7 +50,7 @@
 </template>
 
 <template name="DiseaseReferences">
-  {{#if disease.database_cross_reference}}
+  {{#if disease.database_cross_reference.length}}
     <h3>In Other Databases:</h3>
     <ul>
       {{#each sortedReferences}}

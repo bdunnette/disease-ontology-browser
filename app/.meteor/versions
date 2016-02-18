@@ -24,8 +24,6 @@ ddp-common@1.2.2
 ddp-server@1.2.2
 deps@1.0.9
 diff-sequence@1.0.1
-dispatch:kernel@0.0.6
-dispatch:request-animation-frame@0.0.1
 easy:search@2.0.8
 easysearch:components@2.0.8
 easysearch:core@2.0.8
@@ -35,13 +33,6 @@ ejson@1.0.7
 es5-shim@4.1.14
 fastclick@1.0.7
 geojson-utils@1.0.4
-ground:db@0.3.14
-ground:dictionary@0.2.1
-ground:localstorage@0.1.9
-ground:minimax@1.1.3
-ground:servertime@0.0.3
-ground:store@0.1.2
-ground:util@0.1.17
 harrison:papa-parse@1.1.1
 hot-code-push@1.0.0
 html-tools@1.0.5
@@ -80,8 +71,6 @@ peerlibrary:data-lookup@0.1.0
 peerlibrary:reactive-field@0.1.0
 promise@0.5.1
 raix:eventemitter@0.1.3
-raix:onetimeout@1.0.4
-raix:stubfence@1.0.3
 random@1.0.5
 reactive-dict@1.1.3
 reactive-var@1.0.6

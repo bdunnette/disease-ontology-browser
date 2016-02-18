@@ -21,6 +21,21 @@ Template.Disease.helpers({
     } else {
       return null;
     }
+  },
+
+  symptomsFromDefinition: function(){
+    console.log(this);
+    var definition = null;
+    if (Array.isArray(this.Definitions)) {
+      definition = this.Definitions[0];
+    } else {
+      definition = this.Definitions;
+    }
+    console.log(definition);
+    var re = /has_symptom(.*?)(?=,)/g
+    var parsedSymptoms = definition.match(re);
+    console.log(parsedSymptoms);
+    return parsedSymptoms;
   }
 });
 
