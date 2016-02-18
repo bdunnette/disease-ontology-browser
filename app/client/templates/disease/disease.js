@@ -38,6 +38,9 @@ Template.DiseaseReferences.helpers({
       case "MSH":
         link = "http://www.ncbi.nlm.nih.gov/mesh/?term=" + refCode
         break;
+      case "OMIM":
+        link = "http://omim.org/entry/" + refCode
+        break;
       default:
         link = null;
     }
