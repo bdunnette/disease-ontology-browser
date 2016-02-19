@@ -52,13 +52,16 @@ Template.DiseaseReferences.helpers({
     var link = null;
     switch (refType) {
       case "NCI":
-        link = "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=NCI_Thesaurus&code=" + refCode
+        link = "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=NCI_Thesaurus&code=" + refCode;
         break;
       case "MSH":
-        link = "http://www.ncbi.nlm.nih.gov/mesh/?term=" + refCode
+        link = "http://www.ncbi.nlm.nih.gov/mesh/?term=" + refCode;
         break;
       case "OMIM":
-        link = "http://omim.org/entry/" + refCode
+        link = "http://omim.org/entry/" + refCode;
+        break;
+      case "WIKIDATA":
+        link = "https://www.wikidata.org/wiki/Q" + refCode;
         break;
       default:
         link = null;
